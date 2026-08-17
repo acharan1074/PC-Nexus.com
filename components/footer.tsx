@@ -76,8 +76,8 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                <a href="mailto:contact@pcnexus.com" className="text-sm text-slate-300 hover:text-white transition-colors">
-                  contact@pcnexus.com
+                <a href="mailto:contactpcnexus@gmail.com" className="text-sm text-slate-300 hover:text-white transition-colors">
+                  contactpcnexus@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -88,7 +88,9 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-slate-300">"Kalwakurthy", Nagarkurnool, Telangana 509324</span>
+                <span className="text-sm text-slate-300">
+                  "Kalwakurthy", Telangana 509324
+                </span>
               </li>
             </ul>
           </div>

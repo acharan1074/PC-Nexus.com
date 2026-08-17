@@ -77,8 +77,8 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <div className="space-y-2 text-muted-foreground">
-                <p>Email: contact@pcnexus.com</p>
-                <p>Address: 123 Tech Street, San Francisco, CA 94105, USA</p>
+                <p>Email: contactpcnexus@gmail.com</p>
+                <p>Address: "Kalwakurthy", Telangana 509324, India</p>
               </div>
             </div>
 

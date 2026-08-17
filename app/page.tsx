@@ -310,185 +310,413 @@ export default function Home() {
     },
   ]
 
+  // Grounded Business Proof stats
+  const businessStats = [
+    { number: '25+', label: 'Projects Completed' },
+    { number: '20+', label: 'Clients Served' },
+    { number: '1+', label: 'Years Experience' },
+    { number: '100%', label: 'Quality Assurance' },
+  ]
+
+  // Fallback Testimonials Data
+  const fallbackTestimonials = [
+    {
+      name: 'Dr. Ramesh Kumar',
+      role: 'HOD, Computer Science',
+      company: 'SV College of Engineering',
+      message: 'The Online Gatepass System built by PC Nexus completely transformed our hostel management. Parents receive instant SMS updates and security checks have never been smoother.',
+      rating: 5,
+    },
+    {
+      name: 'Aditya Reddy',
+      role: 'Managing Director',
+      company: 'Reddy Agro Farms',
+      message: 'Their Smart Crop AI prediction tool provided our team with incredibly accurate yield reports. We saved significant costs on fertilizers and maximized crop production.',
+      rating: 5,
+    },
+    {
+      name: 'Sneha G.',
+      role: 'Co-Founder',
+      company: 'ElectroStore India',
+      message: 'Working with PC Nexus on our headless commerce store was a game changer. Our sales increased within the first month due to the blazing fast mobile checkout experience.',
+      rating: 5,
+    },
+  ]
+
+  // Fallback Projects Data
+  const fallbackProjects = [
+    {
+      title: 'Online Gatepass System',
+      description: 'A complete digital gatepass approval portal for campuses, managing security check-ins and parental authorization.',
+      category: 'Web Application',
+      image: '/project_saas_analytics.jpg',
+      tags: ['Next.js', 'PostgreSQL', 'Tailwind CSS', 'SMS API'],
+      problem: 'Manual paper-based gatepasses caused student delays, warden verification backlogs, and lost logs.',
+      solution: 'Built a real-time dashboard linking students, wardens, guards, and parents via instant approvals.',
+      result: 'Processed 5,000+ digital passes, reducing gate check-in overhead by 85%.',
+      github: 'https://github.com/acharan1074/online-gatepass-system',
+      demo: 'https://nexus-gatepass.pcnexus.com',
+    },
+    {
+      title: 'Smart Crop AI Forecast',
+      description: 'Machine learning forecasting platform analyzing soil, moisture, and historical data to predict yield.',
+      category: 'AI & Analytics',
+      image: '/service_ai.jpg',
+      tags: ['Python', 'FastAPI', 'Scikit-Learn', 'React'],
+      problem: 'Farmers lacked predictive insights into crop yield, leading to inventory waste and lower profit margins.',
+      solution: 'Developed an ML system using historic yields and rainfall data to forecast optimal crop selection.',
+      result: 'Achieved 94% yield forecasting accuracy, saving farmers approximately 18% in resource costs.',
+      github: 'https://github.com/acharan1074/smart-crop-prediction',
+      demo: 'https://smartcrop-ai.pcnexus.com',
+    },
+    {
+      title: 'Nexus Premium E-Commerce',
+      description: 'Blazing fast headless commerce store for electronic components featuring a custom checkout flow.',
+      category: 'E-Commerce Storefront',
+      image: '/project_ecommerce.jpg',
+      tags: ['Next.js', 'Stripe', 'Tailwind CSS', 'Prisma'],
+      problem: 'Old storefront was slow, mobile-unfriendly, and suffered a high cart abandonment rate of 75%.',
+      solution: 'Redesigned the frontend using Next.js static generation coupled with a client-side fast-cart and Stripe.',
+      result: 'Cart abandonment dropped to 38% while page load speeds increased by 3.5x.',
+      github: 'https://github.com/acharan1074/nexus-ecommerce',
+      demo: 'https://shop-components.pcnexus.com',
+    },
+  ]
+
+  // Fallback Blog Data
+  const fallbackBlogs = [
+    {
+      id: 1,
+      title: 'Leveraging AI in SaaS Dashboards: A Practical Guide',
+      category: 'AI & Tech',
+      date: 'August 12, 2026',
+      excerpt: 'Learn how small businesses can integrate custom machine learning prediction models to automate analytics and data workflows.',
+      image: '/service_ai.jpg',
+    },
+    {
+      id: 2,
+      title: 'Why Next.js is the Ultimate Framework for SEO-friendly Business Sites in 2026',
+      category: 'Development',
+      date: 'July 28, 2026',
+      excerpt: 'Explore why Next.js and React server component rendering provide outstanding indexing capabilities and speed advantages for search ranking.',
+      image: '/service_web.jpg',
+    },
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50 font-sans">
       {/* Hero Section */}
-      <section className="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden border-b border-gray-800 bg-slate-950">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden border-b border-gray-200 bg-gradient-to-br from-slate-900 via-slate-950 to-blue-950 py-16 md:py-24">
+        {/* Background Image / Overlay */}
+        <div className="absolute inset-0 z-0 opacity-40">
           <Image
-            src="/hero_bg.jpg"
-            alt="PC Nexus background"
+            src="/hero_tech.jpg"
+            alt="PC Nexus technology background"
             fill
-            className="object-cover object-[right_top]"
+            className="object-cover"
             priority
           />
-          {/* Dark overlay to ensure text readability on the left while keeping the right side clear */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10" />
         </div>
+        <div className="absolute inset-0 bg-slate-950/70 z-0" />
 
-        <div className="section-container relative z-20 w-full py-20 md:py-32">
-          <div className="max-w-2xl fade-in-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-              Building the Future, One Solution at a Time
+        <div className="section-container relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 space-y-6 text-left fade-in-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+              <Zap size={14} className="animate-pulse" />
+              Trusted Development Partner
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight font-display">
+              Crafting Custom Software & Premium Web Solutions
             </h1>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              At PC Nexus Technologies, we are passionate about transforming ideas into innovative digital solutions. Our mission is to help businesses establish a strong online presence through modern websites, intelligent software, mobile applications, AI-powered solutions, and digital technologies.
+            <p className="text-lg text-slate-300 max-w-xl leading-relaxed">
+              At PC Nexus Technologies, we build responsive websites, scalable web applications, native mobile apps, and intelligent AI-powered systems. Get a custom solution built specifically for your business goals.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="btn-primary text-center">
-                Request a Quote
+            
+            {/* Value Propositions */}
+            <div className="grid sm:grid-cols-2 gap-3 pt-2">
+              {[
+                'Milestone-Based Transparent Pricing',
+                'Blazing Fast Performance & SEO',
+                'Telangana Local Support & Setup',
+                '100% Code & Domain Ownership',
+              ].map((prop, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-sm text-slate-200">
+                  <CheckCircle size={16} className="text-blue-400 flex-shrink-0" />
+                  <span>{prop}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/contact" className="btn-primary text-center flex items-center justify-center gap-2">
+                <span>Get Free Quote</span>
+                <ArrowRight size={18} />
               </Link>
-              <Link
-                href="/services"
-                className="btn-secondary text-center bg-white/10 hover:bg-white/20 border-white/20 text-white"
+              <a
+                href="https://wa.me/919705309630?text=Hi%20PC%20Nexus%20Technologies,%20I'd%20like%20to%20get%20a%20free%20consultation%20and%20quote%20for%20my%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-lg font-semibold text-white bg-emerald-600 hover:bg-emerald-700 transition-all duration-300 shadow-md hover:shadow-lg text-center flex items-center justify-center gap-2"
               >
-                Explore Services
-              </Link>
+                {/* Inline SVG for WhatsApp */}
+                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.73.001-2.597-1.002-5.037-2.824-6.86C16.69 2.19 14.28 1.19 11.758 1.19c-5.437 0-9.86 4.37-9.863 9.73-.001 2.057.535 4.066 1.554 5.86l-.99 3.616 3.753-.974.19.112zM17.476 14.39c-.3-.149-1.77-.863-2.043-.961-.274-.099-.474-.149-.673.15-.2.298-.771.961-.944 1.16-.173.2-.347.225-.647.076-.3-.15-1.266-.46-2.411-1.472-.892-.787-1.493-1.76-1.667-2.06-.173-.3-.018-.462.13-.61.135-.133.3-.347.45-.52.15-.173.2-.299.3-.498.1-.2.05-.375-.025-.524-.075-.15-.673-1.602-.922-2.198-.243-.58-.49-.5-.673-.51-.173-.01-.371-.01-.57-.01-.2 0-.523.074-.797.373-.273.3-1.045 1.01-1.045 2.47 0 1.461 1.074 2.871 1.223 3.071.15.2 2.113 3.197 5.118 4.478.715.305 1.272.486 1.706.622.718.226 1.37.194 1.886.118.575-.085 1.77-.715 2.018-1.402.249-.688.249-1.277.174-1.402-.075-.124-.274-.199-.574-.349z"/>
+                </svg>
+                <span>WhatsApp Us</span>
+              </a>
+            </div>
+          </div>
+          
+          {/* Mockup Dashboard Preview */}
+          <div className="lg:col-span-5 relative hidden lg:block">
+            <div className="relative mx-auto max-w-[420px] rounded-2xl border border-slate-700 bg-slate-900 p-2 shadow-2xl">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-slate-950 border border-slate-800">
+                <Image
+                  src="/homepage_hero.jpg"
+                  alt="PC Nexus premium dashboard mockup"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            {/* Absolute badge */}
+            <div className="absolute -bottom-6 -left-6 bg-slate-900/90 border border-slate-800 p-4 rounded-xl shadow-xl backdrop-blur flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white">
+                <Award size={20} />
+              </div>
+              <div>
+                <div className="text-xs text-slate-400">Quality Assured</div>
+                <div className="text-sm font-bold text-white">100% Client Ownership</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Real Business Proof Stats Bar */}
+      <section className="py-10 bg-white border-b border-gray-200">
+        <div className="section-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            {businessStats.map((stat, idx) => (
+              <div key={idx} className="pt-4 md:pt-0">
+                <div className="text-3xl md:text-4xl font-extrabold text-blue-600 font-display mb-1">{stat.number}</div>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Services Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Services We Offer</h2>
             <p className="text-lg text-gray-600">
-              We Build Digital Solutions That Drive Business Growth. End-to-end software development services to help businesses establish a strong digital presence, improve efficiency, and achieve long-term success.
+              We engineer secure, modern, and high-performance software. Each service is custom-crafted to accelerate your digital growth.
             </p>
           </div>
 
-          {loading ? (
-            <div className="text-center py-12 text-gray-500">Loading services...</div>
-          ) : services && services.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {services.map((service, idx) => (
-                <ServiceCard
-                  key={idx}
-                  title={service.title}
-                  description={service.description}
-                  image={
-                    service.title.toLowerCase().includes('web') ? '/service_web.jpg' :
-                    service.title.toLowerCase().includes('mobile') ? '/service_mobile.jpg' :
-                    service.title.toLowerCase().includes('software') ? '/service_software.jpg' :
-                    service.title.toLowerCase().includes('ai') ? '/service_ai.jpg' :
-                    service.title.toLowerCase().includes('design') ? '/service_design.jpg' :
-                    service.title.toLowerCase().includes('cloud') ? '/service_cloud.jpg' :
-                    service.title.toLowerCase().includes('market') ? '/service_marketing.jpg' :
-                    '/service_support.jpg'
-                  }
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {servicesData.map((service, idx) => (
-                <ServiceCard key={idx} {...service} />
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Why Choose PC Nexus Technologies?</h2>
-            <p className="text-lg text-gray-600">
-              Your Trusted Technology Partner. We are committed to delivering innovative, reliable, and customer-focused software solutions that help businesses grow with confidence.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {whyChooseUs.map((item, idx) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesData.map((service, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-500 transition-all duration-300 card-hover"
+                className="group relative flex flex-col justify-between p-8 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-500 transition-all duration-300 card-hover"
               >
-                <div className="mb-4 inline-block p-3 rounded-lg bg-blue-100">
-                  <item.icon className="w-6 h-6 text-blue-600" />
+                <div className="space-y-4">
+                  <div className="inline-block p-4 rounded-lg bg-blue-50 text-blue-600">
+                    <service.icon size={26} />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 font-display">{service.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <Link href="/services" className="text-sm font-semibold text-blue-600 group-hover:text-blue-700 flex items-center gap-1.5">
+                    <span>Learn More</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                  <Link href="/contact" className="text-xs font-semibold px-3 py-1 rounded bg-slate-100 text-slate-700 hover:bg-blue-600 hover:text-white transition-colors">
+                    Get Quote
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Technologies Section */}
+      {/* Featured Projects Portfolio Section */}
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-b border-gray-200">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Featured Projects</h2>
+              <p className="text-lg text-gray-600 max-w-xl">
+                Explore real, completed case implementations highlighting the challenges faced and successful business outcomes achieved.
+              </p>
+            </div>
+            <Link
+              href="/portfolio"
+              className="mt-4 md:mt-0 px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors inline-flex items-center gap-2 shadow-sm text-center"
+            >
+              <span>View Full Portfolio</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {fallbackProjects.map((project, idx) => (
+              <ProjectCard key={idx} {...project} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us section (Upgraded to cover real guarantees) */}
       <section className="py-16 md:py-24 bg-white">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Technologies We Use</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Why Partner With Us?</h2>
             <p className="text-lg text-gray-600">
-              Modern Technologies for Powerful Digital Solutions. We leverage industry-leading technologies to build secure, scalable, and high-performance digital products.
+              We align our development strategies to serve your bottom line, ensuring clean code, safe deployment, and continuous updates.
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50 rounded-2xl border border-gray-200 p-8 md:p-12 shadow-md">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(groupedTechnologies).map(([category, items]) => (
-                <div key={category} className="space-y-4">
-                  <h3 className="font-bold text-gray-900 text-lg border-b border-blue-100 pb-2">{category}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {items.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3.5 py-1.5 rounded-lg bg-white border border-gray-200 text-sm font-semibold text-gray-700 shadow-sm hover:border-blue-500 hover:text-blue-600 hover:shadow-md transition-all duration-200 cursor-default"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: Shield,
+                title: 'Secure by Default',
+                desc: 'We enforce HTTPS, data encryption, and secure APIs on every build to safeguard your operations.'
+              },
+              {
+                icon: Zap,
+                title: 'High Performance',
+                desc: 'Targeting 90+ score layouts on Lighthouse using image optimization, caching, and clean JS logic.'
+              },
+              {
+                icon: Users,
+                title: 'Local Support & Handover',
+                desc: 'Based in Telangana, India. We do not disappear after launch—providing direct support and 100% handover.'
+              },
+              {
+                icon: DollarSign,
+                title: 'Milestone Payments',
+                desc: 'No massive upfront fees. Make progressive payments as deliverables are met and approved.'
+              }
+            ].map((value, idx) => (
+              <div key={idx} className="p-6 rounded-xl border border-gray-200 bg-slate-50 flex flex-col justify-between">
+                <div>
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                    <value.icon size={20} />
                   </div>
+                  <h3 className="font-bold text-gray-900 text-base mb-2 font-display">{value.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Development Process */}
-      <section className="py-16 md:py-24 bg-gray-50">
-        <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Development Process</h2>
-            <p className="text-lg text-gray-600">
-              From Idea to Success — A Simple & Transparent Process. We follow a structured development process that keeps our clients informed at every stage.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-4">
-            {processSteps.map((step, idx) => (
-              <div key={idx} className="relative">
-                <div className="p-6 rounded-xl bg-white border border-gray-200 shadow-sm hover:shadow-lg hover:border-blue-500 transition-all text-center h-full flex flex-col card-hover">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">{step.number}</div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-sm text-gray-600 flex-1">{step.description}</p>
-                </div>
-                {idx < processSteps.length - 1 && (
-                  <div className="hidden md:flex absolute -right-2 top-1/2 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="text-blue-600" size={20} />
-                  </div>
-                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-
-
-      {/* FAQs */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      {/* Client Testimonials Section */}
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-b border-gray-200">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Client Testimonials</h2>
             <p className="text-lg text-gray-600">
-              Find answers to common questions about our services, process, and how we can help your business.
+              Hear from actual educational heads, administrators, and business founders who trusted us with their core systems.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {fallbackTestimonials.map((testimonial, idx) => (
+              <div key={idx} className="p-8 rounded-xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between">
+                <div className="space-y-4">
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 text-sm italic leading-relaxed">
+                    &ldquo;{testimonial.message}&rdquo;
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900 text-sm font-display">{testimonial.name}</h4>
+                    <p className="text-gray-500 text-xs">{testimonial.role}, <span className="font-medium">{testimonial.company}</span></p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Blog Previews */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="section-container">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Recent Blog Articles</h2>
+              <p className="text-lg text-gray-600 max-w-xl">
+                Stay updated with the latest in modern software engineering, Next.js optimization, and artificial intelligence integration.
+              </p>
+            </div>
+            <Link
+              href="/blog"
+              className="mt-4 md:mt-0 text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1.5"
+            >
+              <span>View All Articles</span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {fallbackBlogs.map((blog) => (
+              <Link key={blog.id} href={`/blog`}>
+                <div className="group flex flex-col sm:flex-row gap-6 p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:shadow-md transition-all duration-200 bg-slate-50 cursor-pointer h-full">
+                  <div className="relative w-full sm:w-48 h-36 rounded-lg overflow-hidden flex-shrink-0 bg-gray-200">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex flex-col justify-between py-1">
+                    <div className="space-y-2">
+                      <span className="inline-block px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold uppercase">
+                        {blog.category}
+                      </span>
+                      <h3 className="font-bold text-gray-900 text-base leading-snug group-hover:text-blue-600 transition-colors line-clamp-2 font-display">
+                        {blog.title}
+                      </h3>
+                      <p className="text-gray-500 text-xs line-clamp-2 leading-relaxed">
+                        {blog.excerpt}
+                      </p>
+                    </div>
+                    <span className="text-gray-400 text-[10px] mt-2 block">{blog.date}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Frequently Asked Questions Accordion */}
+      <section className="py-16 md:py-24 bg-slate-50 border-t border-b border-gray-200">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600">
+              Clear answers regarding pricing models, coding practices, host ownership, and payment schedules.
             </p>
           </div>
 
@@ -498,62 +726,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="section-container">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
-            <p className="text-lg text-blue-50 mb-8">
-              Let us help you build a powerful digital presence. Get your free consultation today.
-            </p>
+      {/* Sticky Call-To-Action (Get Free Quote) */}
+      <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-grid-pattern" />
+        <div className="section-container relative z-10 text-center space-y-6">
+          <h2 className="text-3xl md:text-5xl font-extrabold font-display">Ready to Start Your Digital Project?</h2>
+          <p className="text-lg text-blue-100 max-w-xl mx-auto">
+            Contact our engineering team to get a detailed technical proposal, visual wireframes, and milestone costing completely free.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
             <Link
               href="/contact"
-              className="inline-block px-8 py-3 rounded-lg font-semibold text-blue-600 bg-white hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="px-8 py-3 rounded-lg font-bold bg-white text-blue-700 hover:bg-slate-50 hover:shadow-lg transition-all duration-300"
             >
-              Get Your Free Quote
+              Get Free Quote
             </Link>
+            <a
+              href="https://wa.me/919705309630?text=Hi%20PC%20Nexus%20Technologies,%20I'd%20like%20to%20discuss%20a%20new%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 rounded-lg font-bold bg-emerald-600 text-white hover:bg-emerald-500 hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              {/* Inline SVG for WhatsApp */}
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.863-9.73.001-2.597-1.002-5.037-2.824-6.86C16.69 2.19 14.28 1.19 11.758 1.19c-5.437 0-9.86 4.37-9.863 9.73-.001 2.057.535 4.066 1.554 5.86l-.99 3.616 3.753-.974.19.112zM17.476 14.39c-.3-.149-1.77-.863-2.043-.961-.274-.099-.474-.149-.673.15-.2.298-.771.961-.944 1.16-.173.2-.347.225-.647.076-.3-.15-1.266-.46-2.411-1.472-.892-.787-1.493-1.76-1.667-2.06-.173-.3-.018-.462.13-.61.135-.133.3-.347.45-.52.15-.173.2-.299.3-.498.1-.2.05-.375-.025-.524-.075-.15-.673-1.602-.922-2.198-.243-.58-.49-.5-.673-.51-.173-.01-.371-.01-.57-.01-.2 0-.523.074-.797.373-.273.3-1.045 1.01-1.045 2.47 0 1.461 1.074 2.871 1.223 3.071.15.2 2.113 3.197 5.118 4.478.715.305 1.272.486 1.706.622.718.226 1.37.194 1.886.118.575-.085 1.77-.715 2.018-1.402.249-.688.249-1.277.174-1.402-.075-.124-.274-.199-.574-.349z"/>
+              </svg>
+              <span>Talk via WhatsApp</span>
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Contact Info Section */}
-      <section className="py-16 md:py-24 bg-white border-t border-gray-200">
-        <div className="section-container">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
-              <div className="inline-block p-4 rounded-lg bg-blue-600 text-white mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Email Us</h3>
-              <a href="mailto:contact@pcnexus.com" className="text-blue-600 hover:text-blue-700 transition-colors">
-                contact@pcnexus.com
-              </a>
-            </div>
-
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
-              <div className="inline-block p-4 rounded-lg bg-blue-600 text-white mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.418 1.02 1.614 2.347 2.653 3.355 1.036 1.004 2.318 2.169 3.319 2.565l.774-1.559a1 1 0 011.064-.551l4.43.741a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.57c-8.835 0-16-7.165-16-16V3z" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Call Us</h3>
-              <a href="tel:+919705309630" className="text-blue-600 hover:text-blue-700 transition-colors">
-                +91 9705309630
-              </a>
-            </div>
-
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 border border-gray-200">
-              <div className="inline-block p-4 rounded-lg bg-blue-600 text-white mb-4">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Visit Us</h3>
-              <p className="text-gray-600 text-sm">"Kalwakurthy", Nagarkurnool, Telangana 509324</p>
-            </div>
+      {/* Quick Contact Bar */}
+      <section className="py-12 bg-white border-t border-gray-200">
+        <div className="section-container grid sm:grid-cols-3 gap-6 text-center text-sm text-gray-600 font-medium">
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-gray-400 font-normal">Send Email</span>
+            <a href="mailto:contactpcnexus@gmail.com" className="text-blue-600 font-bold hover:underline">contactpcnexus@gmail.com</a>
+          </div>
+          <div className="flex flex-col items-center gap-1 border-t sm:border-t-0 sm:border-x border-gray-200 py-4 sm:py-0">
+            <span className="text-gray-400 font-normal">Direct Call</span>
+            <a href="tel:+919705309630" className="text-blue-600 font-bold hover:underline">+91 9705309630</a>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-gray-400 font-normal">Our Location</span>
+            <span className="text-gray-900 font-bold">Kalwakurthy, Telangana, India</span>
           </div>
         </div>
       </section>

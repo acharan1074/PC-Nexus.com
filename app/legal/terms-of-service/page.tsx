@@ -93,7 +93,7 @@ export default function TermsOfService() {
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-4">9. Governing Law</h2>
               <p className="text-muted-foreground mb-4">
-                These terms and conditions are governed by and construed in accordance with the laws of California, United States,
+                These terms and conditions are governed by and construed in accordance with the laws of Telangana, India,
                 and you irrevocably submit to the exclusive jurisdiction of the courts in that location.
               </p>
             </div>
@@ -104,8 +104,8 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <div className="space-y-2 text-muted-foreground">
-                <p>Email: contact@pcnexus.com</p>
-                <p>Address: 123 Tech Street, San Francisco, CA 94105, USA</p>
+                <p>Email: contactpcnexus@gmail.com</p>
+                <p>Address: "Kalwakurthy", Telangana 509324, India</p>
               </div>
             </div>
 

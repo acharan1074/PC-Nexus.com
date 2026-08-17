@@ -224,9 +224,9 @@ export default function Careers() {
               </p>
               <p className="text-muted-foreground">
                 Send us your resume at{' '}
-                <a href="mailto:contact@pcnexus.com" className="text-primary hover:underline">
-                  contact@pcnexus.com
-                </a>
+              <a href="mailto:contactpcnexus@gmail.com" className="text-primary hover:underline">
+                contactpcnexus@gmail.com
+              </a>
               </p>
             </div>
           )}
@@ -291,7 +291,7 @@ export default function Careers() {
                 Apply Now
               </Link>
               <a
-                href="mailto:contact@pcnexus.com"
+                href="mailto:contactpcnexus@gmail.com"
                 className="px-6 py-3 rounded-lg font-semibold border border-primary text-primary hover:bg-primary hover:text-white transition-colors"
               >
                 Email Careers

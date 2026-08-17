@@ -28,7 +28,9 @@ export default function About() {
 
   const stats = [
     { number: '1+', label: 'Years Experience' },
-    { number: '6', label: 'Team Members' },
+    { number: '25+', label: 'Projects Completed' },
+    { number: '20+', label: 'Happy Clients' },
+    { number: '6', label: 'Dedicated Engineers' },
   ]
 
   const timeline = [
@@ -221,6 +223,43 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      {/* Technical Expertise Section */}
+      <section className="py-16 md:py-24 bg-white border-t border-b border-gray-200">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 font-display">Our Core Technical Expertise</h2>
+            <p className="text-lg text-gray-600">
+              We leverage modern frameworks, databases, and machine learning structures to build production-ready digital products.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              { category: 'Frontend', skills: ['React.js', 'Next.js', 'Tailwind CSS', 'TypeScript', 'HTML5/CSS3'] },
+              { category: 'Backend & APIs', skills: ['Node.js', 'Express.js', 'FastAPI', 'Django', 'REST / GraphQL'] },
+              { category: 'Databases', skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Prisma ORM'] },
+              { category: 'Cloud & DevOps', skills: ['AWS', 'Vercel', 'CI/CD Pipelines', 'VPS / Linux', 'Docker'] },
+              { category: 'AI & Machine Learning', skills: ['TensorFlow', 'Scikit-Learn', 'Natural Language NLP', 'Chatbots', 'Python Scripting'] },
+            ].map((item, idx) => (
+              <div key={idx} className="p-6 rounded-xl bg-slate-50 border border-gray-200 shadow-sm flex flex-col justify-between">
+                <div>
+                  <h3 className="font-bold text-gray-900 text-base mb-4 border-b border-gray-200 pb-2">{item.category}</h3>
+                  <ul className="space-y-2 text-sm text-gray-600 font-medium">
+                    {item.skills.map((skill, sidx) => (
+                      <li key={sidx} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0" />
+                        <span>{skill}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
