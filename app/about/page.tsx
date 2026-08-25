@@ -192,19 +192,20 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Founder & Team Section */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Our Leadership</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-display">Our Team & Leadership</h2>
             <p className="text-lg text-gray-600">
-              Guided by visionary leadership committed to innovation and excellence.
+              Meet the core professionals driving our technology development and operational excellence.
             </p>
           </div>
 
-          <div className="max-w-md mx-auto">
-            <div className="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden">
-              <div className="relative h-80 w-full">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Alligaskhanpet Charan - Founder and CEO */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden flex flex-col">
+              <div className="relative h-80 w-full bg-slate-100">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-12%20at%2022.52.56-wNA0n4YSOhiFrp6WAoCcfzoo15rXQw.jpeg"
                   alt="Alligaskhanpet Charan - Founder and CEO"
@@ -212,12 +213,35 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 mb-1">Alligaskhanpet Charan</h3>
-                <p className="text-lg font-semibold text-blue-600 mb-4">Founder & CEO</p>
-                <p className="text-gray-600 leading-relaxed">
-                  With a passion for technology and a vision to empower businesses through digital transformation, Alligaskhanpet Charan founded PC Nexus Technologies to deliver innovative software solutions that create lasting value for clients worldwide.
-                </p>
+              <div className="p-8 text-center flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">Alligaskhanpet Charan</h3>
+                  <p className="text-lg font-semibold text-blue-600 mb-4">Founder & CEO</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    With a passion for technology and a vision to empower businesses through digital transformation, Alligaskhanpet Charan founded PC Nexus Technologies to deliver innovative software solutions that create lasting value for clients worldwide.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Prasad - Cloud Engineer */}
+            <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden flex flex-col">
+              <div className="relative h-80 w-full bg-slate-100">
+                <Image
+                  src="/team_prasad.png"
+                  alt="Prasad - Cloud Engineer"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 text-center flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-1">Prasad</h3>
+                  <p className="text-lg font-semibold text-blue-600 mb-4">Cloud Engineer & DevOps</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    Prasad designs and maintains our cloud architecture, ensuring scalable hosting environments, database reliability, serverless infrastructure, and high availability systems for our enterprise products.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
