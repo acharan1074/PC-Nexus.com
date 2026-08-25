@@ -231,7 +231,7 @@ export default function About() {
                   src="/team_prasad.png"
                   alt="Prasad - Cloud Engineer"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="p-8 text-center flex-1 flex flex-col justify-between">
