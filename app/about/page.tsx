@@ -205,7 +205,7 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Alligaskhanpet Charan - Founder and CEO */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden flex flex-col">
-              <div className="relative h-80 w-full bg-slate-100">
+              <div className="relative h-96 md:h-[400px] w-full bg-slate-100">
                 <Image
                   src="/team_charan.png"
                   alt="Alligaskhanpet Charan - Founder and CEO"
@@ -226,7 +226,7 @@ export default function About() {
 
             {/* Prasad - Cloud Engineer */}
             <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden flex flex-col">
-              <div className="relative h-80 w-full bg-slate-100">
+              <div className="relative h-96 md:h-[400px] w-full bg-slate-100">
                 <Image
                   src="/team_prasad.png"
                   alt="Prasad - Cloud Engineer"
