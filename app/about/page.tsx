@@ -207,10 +207,10 @@ export default function About() {
             <div className="bg-white rounded-xl border border-gray-200 shadow-md overflow-hidden flex flex-col">
               <div className="relative h-80 w-full bg-slate-100">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-07-12%20at%2022.52.56-wNA0n4YSOhiFrp6WAoCcfzoo15rXQw.jpeg"
+                  src="/team_charan.png"
                   alt="Alligaskhanpet Charan - Founder and CEO"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="p-8 text-center flex-1 flex flex-col justify-between">
